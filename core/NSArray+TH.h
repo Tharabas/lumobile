@@ -141,6 +141,8 @@
  */
 - (NSArray *)filter:(BOOL (^)(id object))block;
 
+- (NSArray *)where:(NSString *)predicate, ...;
+
 /**
  * Filters one element from the array that returns YES from the called block
  * might not always be the same, it just will return any match!
@@ -149,6 +151,8 @@
  * will return nil for no match
  */
 - (id)filterOne:(BOOL (^)(id object))block;
+
+- (id)find:(NSString *)predicate, ...;
 
 /**
  * Returns YES when all members of the current array pass the isKindOfClass

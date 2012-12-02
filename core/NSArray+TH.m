@@ -223,6 +223,15 @@
   }];
 }
 
+- (NSArray *)where:(NSString *)predicate, ... {
+  va_list args;
+  va_start(args, predicate);
+  NSPredicate *pred = [NSPredicate predicateWithFormat:predicate arguments:args];
+  va_end(args);
+
+  return [self filteredArrayUsingPredicate:pred];
+}
+
 - (id)filterOne:(BOOL (^)(id object))block {
   __block id re = nil;
   
@@ -234,6 +243,16 @@
   }];
   
   return re;
+}
+
+- (id)find:(NSString *)predicate, ... {
+  va_list args;
+  va_start(args, predicate);
+  NSPredicate *pred = [NSPredicate predicateWithFormat:predicate arguments:args];
+  va_end(args);
+
+  NSArray *results = [self filteredArrayUsingPredicate:pred];
+  return [results objectOrNilAtIndex:0];
 }
 
 - (BOOL)allKindOfClass:(Class)aClass {
