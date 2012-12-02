@@ -7,6 +7,8 @@
 //
 
 #import "CCNode.h"
+#import "cocos2d.h"
+#import "cocos2d_extensions.h"
 
 @interface CCNode (TH)
 

@@ -6,6 +6,7 @@
 //
 
 // Cocos2d
+#import "cocos2d.h"
 #import "cocos2d_extensions.h"
 
 #import "UIColor+Cocos.h"

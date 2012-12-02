@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "cocos2d.h"
 
 @interface THGradient : NSObject {
   NSArray *_colors;

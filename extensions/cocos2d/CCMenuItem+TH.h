@@ -7,6 +7,7 @@
 //
 
 #import "CCMenuItem.h"
+#import "cocos2d.h"
 
 @interface CCMenuItemImage (TH)
 
