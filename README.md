@@ -1,4 +1,4 @@
-# Lumumba Mobile - Cocoa Touch best practice extensions
+### Lumumba Mobile - Cocoa Touch best practice extensions
 
 Lumumba Mobile (lumobile) is a set of toolkit classes
 that have helped my developing several iOS applications.
@@ -34,23 +34,39 @@ I'm working on an easier way, but for now you have to clone the repository and c
   #import "lumobile-cocos2d.h"
   ```
 
-## Extensions to standard Objective-C classes aka. Categories ##
+# Categories #
 
 Most of the used categories will look like ``UIOriginalFile+TH`` as they are in the __TH__arabas namespace.
 
-### NSString ###
+## NSString ## ##
 
-``TODO``
+``TODO: write a bit more``
 
-### NSArray / NSMutableArray ###
+## NSArray ## ##
 
-``TODO``
+### reversed ###
 
-### NSDictionary / NSMutableDictionary ###
+Returns the reversed version of the NSArray
 
-``TODO``
+### map ###
 
-### UIColor ###
+Returns a new ``NSArray`` performing a block on every item of the ``NSArray``.
+
+As an ``NSArray`` can not contain any ``nil`` value, returning ``nil`` will drop that value from the resulting ``NSArray``.
+
+### filter ###
+
+Returns a subset of the original ``NSArray`` that contains all elements, where the call of the block returned ``YES``.
+
+> In some cases you might be forced to coerce the return value to `(BOOL)` as the compiler would not accept it otherwise.
+
+``TODO: write a bit more``
+
+## NSDictionary ##
+
+``TODO: write a bit more``
+
+## UIColor ##
 
 Especially the color classes needed an easy access point.
 The ``THWebNamedColors`` caches a map of named colors with the default web names (css) of the colors.
@@ -65,24 +81,23 @@ That string2color parser allows even more stuff, like blending colors:
 
 It even defines a (readonly) property __colorValue__ on a NSString, allowing you to use this:
 
-```
+```objc
 NSColor *magenta   = @"magenta".colorValue;
 NSColor *pinkGlass = @"pink".colorValue.translucent;
 ```
 
 As well as another (readonly) property __colorValues__ on NSArray
 
-```
-NSArray *colors = [NSArray arrayWithObjects:[NSColor blackColor], 
-                                            [NSColor colorNamed:@"pink"],
-                                            [NSColor colorNamed:@"gold"],
-                                            nil
+```objc
+NSArray *colors = @[[NSColor blackColor], 
+                    [NSColor colorNamed:@"pink"],
+                    [NSColor colorNamed:@"gold"]
                   ];
 // or simply
 NSArray *colors = @"black pink gold".words.colorValues;
 ```
 
-## Some Objective-C Sugar
+# Some Objective-C Sugar
 
 Lots and lots of times, you usually need to format NSStrings.
 Each time with `` [NSString stringWithFormat:format, arg1, arg2, arg3, ...] ``
@@ -103,12 +118,14 @@ Look for ``THPoint``, ``THSize``, ``THRect`` in the sources.
 
 _... more details on that later ..._
 
-## Cocos2d Extension ##
+# Extensions
+
+## cocos2d
 
 I've worked with Cocos2d (great Framework for 2d stuff) but found some nuisance, that have been __corrected__ my way by creating categories for them.
 You may find those under ``/extensions/cocos2d``.
 
-## DISCLAIMER
+# DISCLAIMER
 
 All those components, snippets and code fragments have been created,
 because I either used them very often and thought, there should be
