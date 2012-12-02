@@ -26,10 +26,3 @@
 
 // UI-Kit Addons
 #import "UIColor+TH.h"
-#import "UIColor+Cocos.h"
-
-// Cocos2d
-#import "cocos2d.h"
-#import "cocos2d_extensions.h"
-
-#import "THGradient.h"
