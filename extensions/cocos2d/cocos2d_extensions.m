@@ -54,7 +54,7 @@ void ccMovePoly(CGPoint* poly, NSUInteger points, CGPoint add) {
 void ccDrawRectangle(CGRect rect, ccColor4F color) {
   CGPoint points[4];
   ccGetRectCorners(points, rect);
-  ccDrawFilledPoly(points, 4, color);
+  ccDrawSolidPoly(points, 4, color);
 }
 
 void ccDrawFrame(CGRect rect, CGFloat width, ccColor4F color) {

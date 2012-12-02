@@ -47,8 +47,9 @@
 		thisAngle = CC_DEGREES_TO_RADIANS(p.rotation);
     
     CGPoint anchorPointInPixels = THMultiplyPointBySize(p.anchorPoint, pixelSize);
-    
-		if (!p.isRelativeAnchorPoint) {
+
+    // ignoreAnchorPointForPosition has been isRelativeAnchorPoint
+		if (p.ignoreAnchorPointForPosition) {
       transform = CGAffineTransformTranslate(transform, anchorPointInPixels.x, anchorPointInPixels.y);
     }
     
