@@ -21,8 +21,6 @@
 @property (readonly) CGFloat *rgb;
 
 -(BOOL)getRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue;
-// no more need for this, has been added to iOS 5.0 lib
-//-(BOOL)getRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha;
 
 @property (readonly) CGFloat relativeBrightness;
 @property (readonly, getter=isDark) BOOL dark;
