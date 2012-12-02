@@ -9,13 +9,30 @@ It's far from being a complete framework, but you may use any of it's code at yo
 
 I'm working on an easier way, but for now you have to clone the repository and create references to the files you want manually.
 
-1. clone from github
+1. Open a terminal and navigate to the project, 
+   where you want to add the lumobile library
 
-```sh
-git clone https://github.com/Tharabas/lumobile.git
-```
+2. add as a submodule from github
 
-2. import the lumobile.h in your prefix.pch
+  ```sh
+  git submodules add https://github.com/Tharabas/lumobile.git libs/lumobile
+  ```
+  where the ``libs/lumobile`` is just the path you want to put the library
+
+3. include the project in XCode
+
+  Add the files, you put under ``lib/lumobile`` to your project
+
+4. Include the lumobile.h where you want to use it
+
+  The most comfortable way would be to put it into your ``Prefix.pch``, wich is usually located under __Supporting Files__ in your XCode working tree.
+
+  ```objc
+  // for the framework
+  #import "lumobile.h"
+  // for cocos2d extensions
+  #import "lumobile-cocos2d.h"
+  ```
 
 ## Extensions to standard Objective-C classes aka. Categories ##
 
@@ -85,6 +102,11 @@ There are other _preprocessor macros_ that do similar things.
 Look for ``THPoint``, ``THSize``, ``THRect`` in the sources.
 
 _... more details on that later ..._
+
+## Cocos2d Extension ##
+
+I've worked with Cocos2d (great Framework for 2d stuff) but found some nuisance, that have been __corrected__ my way by creating categories for them.
+You may find those under ``/extensions/cocos2d``.
 
 ## DISCLAIMER
 
