@@ -1,87 +1,198 @@
 <!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Lumobile by Tharabas</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
-  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+  </head>
+  <body>
 
-  <title>Lumobile</title>
-  <meta name="description" content="Lumumba Mobile - my iOS utility belt">
+      <header>
+        <h1>Lumobile</h1>
+        <p>Lumumba Mobile - my iOS utility belt</p>
+      </header>
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+      <div id="banner">
+        <span id="logo"></span>
 
-</head>
-
-<body>
-
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Lumobile</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">Lumumba Mobile - my iOS utility belt</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/Tharabas/lumobile/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/Tharabas/lumobile/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/Tharabas/lumobile" class="code">View Lumobile on GitHub</a>
+        <a href="https://github.com/Tharabas/lumobile" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/Tharabas/lumobile/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/Tharabas/lumobile/tarball/master" class="button">TAR</a></li>
+          </ul>
         </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h3>Welcome to GitHub Pages.</h3>
+      </div><!-- end banner -->
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h3>Lumumba Mobile - Cocoa Touch best practice extensions</h3>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<p>Lumumba Mobile (lumobile) is a set of toolkit classes
+that have helped my developing several iOS applications.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>It's far from being a complete framework, but you may use any of it's code at your will.</p>
 
-<h3>Designer Templates</h3>
+<h1>Installation</h1>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>I'm working on an easier way, but for now you have to clone the repository and create references to the files you want manually.</p>
 
-<h3>Rather Drive Stick?</h3>
+<ol>
+<li><p>Open a terminal and navigate to the project, 
+where you want to add the lumobile library</p></li>
+<li>
+<p>add as a submodule from github</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<div class="highlight"><pre>git submodules add https://github.com/Tharabas/lumobile.git libs/lumobile
+</pre></div>
 
-<h3>Authors and Contributors</h3>
+<p>where the <code>libs/lumobile</code> is just the path you want to put the library</p>
+</li>
+<li>
+<p>include the project in XCode</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Add the files, you put under <code>lib/lumobile</code> to your project</p>
+</li>
+<li>
+<p>Include the lumobile.h where you want to use it</p>
 
-<h3>Support or Contact</h3>
+<p>The most comfortable way would be to put it into your <code>Prefix.pch</code>, wich is usually located under <strong>Supporting Files</strong> in your XCode working tree.</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </article>
-      </div>
+<div class="highlight"><pre><span class="cp">// for the framework</span>
+<span class="cp">#import "lumobile.h"</span>
+<span class="cp">// for cocos2d extensions</span>
+<span class="cp">#import "lumobile-cocos2d.h"</span>
+</pre></div>
+</li>
+</ol><h1>Categories</h1>
+
+<p>Most of the used categories will look like <code>UIOriginalFile+TH</code> as they are in the <strong>TH</strong>arabas namespace.</p>
+
+<h2>NSString</h2>
+
+<p><code>TODO: write a bit more</code></p>
+
+<h2>NSArray</h2>
+
+<h3>reversed</h3>
+
+<p>Returns the reversed version of the NSArray</p>
+
+<h3>map</h3>
+
+<p>Returns a new <code>NSArray</code> performing a block on every item of the <code>NSArray</code>.</p>
+
+<p>As an <code>NSArray</code> can not contain any <code>nil</code> value, returning <code>nil</code> will drop that value from the resulting <code>NSArray</code>.</p>
+
+<h3>filter</h3>
+
+<p>Returns a subset of the original <code>NSArray</code> that contains all elements, where the call of the block returned <code>YES</code>.</p>
+
+<blockquote>
+<p>In some cases you might be forced to coerce the return value to <code>(BOOL)</code> as the compiler would not accept it otherwise.</p>
+</blockquote>
+
+<p><code>TODO: write a bit more</code></p>
+
+<h2>NSDictionary</h2>
+
+<p><code>TODO: write a bit more</code></p>
+
+<h2>UIColor</h2>
+
+<p>Especially the color classes needed an easy access point.
+The <code>THWebNamedColors</code> caches a map of named colors with the default web names (css) of the colors.
+Thus you can grab an NSColor with the value of <strong>skyblue</strong> via <code>[NSColor colorWithName:@"skyblue"]</code></p>
+
+<p>A more generic parser version of this is <code>[NSColor colorFromString:colorString]</code> wich tries to parse
+any string into a NSColor.</p>
+
+<p>That string2color parser allows even more stuff, like blending colors:</p>
+
+<p>50% white, 50% blue -&gt; <code>[UIColor colorFromString:@"white &lt;&gt; blue"]</code> (see UIColor+TH for more details on this)</p>
+
+<p>It even defines a (readonly) property <strong>colorValue</strong> on a NSString, allowing you to use this:</p>
+
+<div class="highlight"><pre><span class="n">NSColor</span> <span class="o">*</span><span class="n">magenta</span>   <span class="o">=</span> <span class="s">@"magenta"</span><span class="p">.</span><span class="n">colorValue</span><span class="p">;</span>
+<span class="n">NSColor</span> <span class="o">*</span><span class="n">pinkGlass</span> <span class="o">=</span> <span class="s">@"pink"</span><span class="p">.</span><span class="n">colorValue</span><span class="p">.</span><span class="n">translucent</span><span class="p">;</span>
+</pre></div>
+
+<p>As well as another (readonly) property <strong>colorValues</strong> on NSArray</p>
+
+<div class="highlight"><pre><span class="n">NSArray</span> <span class="o">*</span><span class="n">colors</span> <span class="o">=</span> <span class="err">@</span><span class="p">[[</span><span class="n">NSColor</span> <span class="n">blackColor</span><span class="p">],</span> 
+                    <span class="p">[</span><span class="n">NSColor</span> <span class="nl">colorNamed:</span><span class="s">@"pink"</span><span class="p">],</span>
+                    <span class="p">[</span><span class="n">NSColor</span> <span class="nl">colorNamed:</span><span class="s">@"gold"</span><span class="p">]</span>
+                  <span class="p">];</span>
+<span class="c1">// or simply</span>
+<span class="n">NSArray</span> <span class="o">*</span><span class="n">colors</span> <span class="o">=</span> <span class="s">@"black pink gold"</span><span class="p">.</span><span class="n">words</span><span class="p">.</span><span class="n">colorValues</span><span class="p">;</span>
+</pre></div>
+
+<h1>Some Objective-C Sugar</h1>
+
+<p>Lots and lots of times, you usually need to format NSStrings.
+Each time with <code>[NSString stringWithFormat:format, arg1, arg2, arg3, ...]</code></p>
+
+<p>This can be shortened to <code>$(format, arg1, arg2, arg3, ...)</code> using the <code>$</code> macro.</p>
+
+<p>As well as <code>[NSArray arrayWithObjects:o1, o2, o3, ..., nil]</code></p>
+
+<p>May be written as <code>$array(o1,o2,o3)</code></p>
+
+<p><strong>Note:</strong> As with <strong>clang 4.1</strong> the <code>$array(...)</code> and <code>$map(...)</code> features are <strong>deprecated</strong> as you can use the <code>@[...]</code> and <code>@{...}</code> compiler features. That's even more awesome and just fixes the need for my macros.</p>
+
+<p>There are other <em>preprocessor macros</em> that do similar things.</p>
+
+<h2>A thin layer for geometric calculus</h2>
+
+<p>Look for <code>THPoint</code>, <code>THSize</code>, <code>THRect</code> in the sources.</p>
+
+<p><em>... more details on that later ...</em></p>
+
+<h1>Extensions</h1>
+
+<h2>cocos2d</h2>
+
+<p>I've worked with Cocos2d (great Framework for 2d stuff) but found some nuisance, that have been <strong>corrected</strong> my way by creating categories for them.
+You may find those under <code>/extensions/cocos2d</code>.</p>
+
+<h1>DISCLAIMER</h1>
+
+<p>All those components, snippets and code fragments have been created,
+because I either used them very often and thought, there should be
+an easier way to do this, or because I simply did not know that there
+is another way to do this in Objective-C.</p>
+
+<p>I do neither claim all things to be flawless nor perfect to fit <em>your</em> Apps.</p>
+
+<p>I'm absolutely aware, that <em>preprocessor macros</em> may be considered evil,
+as they obscure code. That may be right, but they can also be used to considerably
+<em>clean up the code</em>, what would be desired behaviour.</p>
+
+<p>Anyway they are a feature of the c environment.</p>
+
+<p>You may use it or you may leave it. Still your decision.</p>
+
+<p>Constructive comments are welcome, anytime, though.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/Tharabas">Tharabas</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/Tharabas" class="avatar"><img src="https://secure.gravatar.com/avatar/c3009d2e6948b8966e8ede9e7bf6c804?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/Tharabas">Tharabas</a> maintains <a href="https://github.com/Tharabas/lumobile">Lumobile</a></p>
-
-
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/Tharabas/lumobile/tarball/master" class="tar">tar</a><a href="https://github.com/Tharabas/lumobile/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
-
-  
-</body>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
 </html>
